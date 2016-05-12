@@ -1,6 +1,6 @@
-##1. Vagrant��ʲô
+##1. Vagrant是什么
 
-�����ҵ�Ŀǰ�ĸ������⡣���ǰ�һ��������Լ������������������л�����Ϊһ��box��
-Vagrant������԰������box��vagrant����ֱ�ӹ������ǣ��������ٰ�װ��ɾ����ö�ٵȡ� 
-Vagrant����ֱ�Ӽ���һ��box����Ϊbox��������Ψһ��һ�ֻ������ã��ڲ�ͬ�ĵط�ʹ�����box������Ч���������ı䡣��Ҫ˵�����ǣ�box�ļ�����������ϵͳ�������ļ���ֻ�ǶԲ���ϵͳ���������Լ�����������Ϣ������������box�ļ�����
-Vagrant�����Զ�����box�ļ���Ҳ���Լ���box�ļ���ͨ��Vagrant ssh ������Խ���box�ڲ��Ĳ���ϵͳ�����и��ֲ�����ÿ���������ñ仯�����ᱻ��¼��һ��Vagrantfile���棬���Vagrantfile��δ������box����Ҫ���ݡ�
+这是我的目前的个人理解。我们把一个虚拟机以及虚拟机里面的所有运行环境称为一个box。
+Vagrant里面可以包含多个box，vagrant可以直接管理他们，包括快速安装，删除和枚举等。 
+Vagrant可以直接加载box。因为box是描述了唯一的一种环境配置，在不同的地方使用这个box，运行效果不发生改变。这点是Vagrant的一个很大的优点，这样，我们配置好环境以后，生成box，以后即便在线上，运行效果也是一样的。如果我们想对线上的某个box里的服务测试，直接把这个box拉下来，然后用Vagrant启动，然后直接测试就可以了。需要说明的是，box文件不像我们想象的那么大，box文件里面只是包含对操作系统的描述，以及各种配置信息的描述，所有box文件并不大。
+Vagrant可以自动生成box文件，也可以加载box文件。另外，通过Vagrant ssh命令，还可以进入box内部的操作系统，进行各种操作。在操作过程中，每当产生配置变化，都会被记录到一个Vagrantfile里面，这个Vagrantfile是未来生成box的主要依据。
