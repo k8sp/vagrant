@@ -7,3 +7,9 @@ Vagrant可以自动生成box文件，也可以加载box文件。另外，通过V
 
 
 总结一下，Vagrant是多节点集群的很理想的配置管理工具，我们只需做一次配置，Vagrant就可以通过生成box文件帮我们完成多个节点的同步。同时Vagrant和可以控制多个节点的启用和停止。
+
+##2. 参考材料
+
+-官网帮助：https://www.vagrantup.com/docs/
+-Vagrant使用简介：http://xuclv.blog.51cto.com/5503169/1239250
+-使用Vagrant（零）——为什么要使用Vagrant：http://www.ituring.com.cn/article/131600
