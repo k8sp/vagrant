@@ -10,6 +10,6 @@ Vagrant可以自动生成box文件，也可以加载box文件。另外，通过V
 
 ##2. 参考材料
 
-*官网帮助：https://www.vagrantup.com/docs/
-*Vagrant使用简介：http://xuclv.blog.51cto.com/5503169/1239250
-*使用Vagrant（零）——为什么要使用Vagrant：http://www.ituring.com.cn/article/131600
+* 官网帮助：https://www.vagrantup.com/docs/
+* Vagrant使用简介：http://xuclv.blog.51cto.com/5503169/1239250
+* 使用Vagrant（零）——为什么要使用Vagrant：http://www.ituring.com.cn/article/131600
