@@ -19,6 +19,32 @@ Vagrant解决的第三个问题是：我们可以把自己的虚拟机保存成�
 1. vagrant halt <vm_name> 关机。
 1. vagrant destroy 关闭和删除所有guest。注意，这不会删除下载到本地的boxes。
 
+## 手工安装box
+
+有时候我们需要在没有外网访问能力的机器上搭建一个虚拟机或者虚拟机群。这
+时候，我们可能需要找一台能上网的机器，下载对应的box，用USB盘拷贝到没有
+外网访问的机器上，配置和启动虚拟机。具体做法如下：
+
+1. 下载box文件，比如这个CoreOS box：
+
+   ```
+   wget http://beta.release.core-os.net/amd64-usr/1010.3.0/coreos_production_vagrant.box
+   ```
+
+   把这个文件随便放在某个目录里，比如叫`/home/yi/coreos_production_vagrant.box`。
+
+1. 把这个box导入到Vagrant的box cache里，顺便给它起个名字，比如叫 `yi`：
+
+   ```
+   vagrant box add yiwang ./coreos_production_vagrant.box
+   ```
+
+1. 在 Vagrantfile 里指定使用这个叫做`yi`的box：
+
+   ```
+   config.vm.box = "yiwang"
+   ```
+
 ## 坑
 
 1. 可以把host的某个目录映射到guest里。有几种方式映射，其中最常用的是通过NFS。这需要host上有nfsd。Mac OS X启动时会启动nfsd。Linux里很容易安装nfsd。确定host上nfsd在运行之后，只需要在Vagrantfile里加一行：
