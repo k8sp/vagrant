@@ -36,13 +36,13 @@ Vagrant解决的第三个问题是：我们可以把自己的虚拟机保存成�
 1. 把这个box导入到Vagrant的box cache里，顺便给它起个名字，比如叫 `yi`：
 
    ```
-   vagrant box add yiwang ./coreos_production_vagrant.box
+   vagrant box add yi ./coreos_production_vagrant.box
    ```
 
 1. 在 Vagrantfile 里指定使用这个叫做`yi`的box：
 
    ```
-   config.vm.box = "yiwang"
+   config.vm.box = "yi"
    ```
 
 ## 坑
