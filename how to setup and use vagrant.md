@@ -165,6 +165,42 @@ output属性表示box文件名称。
 ```
 vagrant box add first.box --name first_add.box
 ```
+查看box列表，结果如下：
+```
+F:\kubernetes\vagrant>vagrant box list
+first_add.box       (virtualbox, 0)
+hashicorp/precise64 (virtualbox, 1.1.0)
+```
+
+###11. 修改Vagrantfile，修改后如下：
+```
+Vagrant.configure("2") do |config|
+  config.vm.box = "first_add"
+  config.vm.provision :shell, path: "bootstrap.sh"
+  config.vm.network :forwarded_port, guest: 80, host: 4567
+end
+```
+
+###12. 直接执行
+```
+vagrant up
+```
+
+###13. 发现启动的还是同一个虚拟机
+在virtualPC里只看到一个虚拟机
+
+###14. 尝试指定box文件
+```
+vagrant up first_add
+```
+返回：
+```
+The machine with the name 'first_add' was not found configured for
+this Vagrant environment.
+```
+####没有成功！####
+
+
 
 ####没解决：
 没有办法在同一个机器里使用这个创建多first_add.box
