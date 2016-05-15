@@ -154,17 +154,17 @@ http://127.0.0.1:4567/
 ###9. 打包一个box
 
 就是将现在的虚拟机环境和配置打包成一个box，执行：
-···
+```
 vagrant package --output first.box
-···
+```
 output属性表示box文件名称。
 
 
 ###10. 使用这个box
 执行：
-···
+```
 vagrant box add first.box --name first_add.box
-···
+```
 
 ####没解决：
 没有办法在同一个机器里使用这个创建多first_add.box
